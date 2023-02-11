@@ -5,10 +5,12 @@ const app = express()
 app.set('view engine','pug')
 
 
+app.use('/static', express.static('public'))
 
 
+// local host
 app.get('/', (req,res)=>{
-    res.send('Nayap Bni!')
+    res.render('home')
 })
 
 app.listen(14000, err=>{
